@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>drtbox</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <center>
+        <div>
+            <h1>
+                Welcome to <drtbox>drtbox</drtbox>
+                <br>
+                <p>an easy website for (unsecure) text sharing</p>
+            </h1>
+            <input type="search" id="path" placeholder="Find a box...">
+            <button onclick="goToBox()">Search</button>
+        </div>
+    </center>
+</body>
+
+<script type="text/javascript">
+    function goToBox(){
+        boxPath = window.location.href + document.getElementById("path").value;
+        window.location.href = boxPath;
+    }
+</script>
+
+<style>
+    div {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    h1 {font-size: 7.5vh; color: #242424;}
+    p {font-size: 2vh; font-weight: normal;}
+    input {font-size: 2vh; width: 40%; margin-right: 5px;}
+    button {font-size: 2vh}
+</style>
