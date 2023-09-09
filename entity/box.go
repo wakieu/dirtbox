@@ -15,6 +15,13 @@ func NewBox(boxpath string) *Box {
 	}
 }
 
+func NewBoxWithText(boxpath string, text string) *Box {
+	return &Box{
+		BoxPath: boxpath,
+		Text: text,
+	}
+}
+
 func (b *Box) UpdateText(text string) {
 	b.Text = text
 }
