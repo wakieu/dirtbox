@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <title>drtbox</title>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
+
 <body>
     <center>
         <div>
@@ -12,23 +14,59 @@
                 <br>
                 <p>an easy website for (unsecure) text sharing</p>
             </h1>
-            <input type="search" id="path" placeholder="Find a box...">
-            <button onclick="goToBox()">Search</button>
+            <input type="search" id="pathInput" placeholder="Find a box...">
+            <button onclick="goToBox()" id="searchBtn">Search</button>
         </div>
     </center>
 </body>
 
 <script type="text/javascript">
-    function goToBox(){
-        boxPath = window.location.href + document.getElementById("path").value;
+    var inputField = document.getElementById("pathInput")
+
+    inputField.addEventListener("keypress", function (event) {
+        if (event.key === "Enter" || e.keyCode === 13) {
+            event.preventDefault();
+            var text = inputField.value.replace(/\s/g,'')
+            if (text != "" && text != "/") {
+                document.getElementById("searchBtn").click();
+                console.log("enter")
+            } else {
+                inputField.value = ""
+            }
+        }
+    });
+
+    function goToBox() {
+        boxPath = window.location.href + inputField.value;
         window.location.href = boxPath;
     }
 </script>
 
 <style>
-    div {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-    h1 {font-size: 7.5vh; color: #242424;}
-    p {font-size: 2vh; font-weight: normal;}
-    input {font-size: 2vh; width: 40%; margin-right: 5px;}
-    button {font-size: 2vh}
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-size: 7.5vh;
+        color: #242424;
+    }
+
+    p {
+        font-size: 2vh;
+        font-weight: normal;
+    }
+
+    input {
+        font-size: 2vh;
+        width: 40%;
+        margin-right: 5px;
+    }
+
+    button {
+        font-size: 2vh
+    }
 </style>
