@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/wakieu/drtbox/database"
 	"github.com/wakieu/drtbox/entity"
@@ -140,6 +141,8 @@ func cleanPath(s string) string {
 	if s[len(s)-1] == '/' {
 		s = s[:len(s)-1]
 	}
+	s = strings.Trim(s, " ")
+	s = strings.ReplaceAll(s, " ", "%20")
 	return s
 }
 
