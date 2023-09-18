@@ -1,6 +1,6 @@
 # drtbox
 
-This project is a clone of [dontpad](https://dontpad.com/).
+This project is a clone of [dontpad](https://dontpad.com/) made in Go for practice purposes.
 
 ## Implementation
 
